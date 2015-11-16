@@ -1,0 +1,13 @@
+class ListingsController < ApplicationController
+
+
+
+def index
+@listing = Listing.all
+end
+
+def new
+@listing = Listing.new
+end
+
+end
