@@ -1,0 +1,21 @@
+<h2>Listing : <%= @listing.listing_name %></h2>
+
+<h1>About it: <%= @listing.summary %></h1>
+
+<h1>Home type: <%= @listing.home_type %></h1>
+
+<h1>Room type: <%= @listing.room_type %></h1>
+
+<h1>City: <%= @listing.city %></h1>
+
+<h1>Bathroom: <%= @listing.bathroom %></h1>
+
+<h1>Bedcount: <%= @listing.bedcount %></h1>
+
+<h1>Bedroom: <%= @listing.bedroom %></h1>
+
+<h1>Accomodates: <%= @listing.accomodates %></h1>
+
+<%= link_to "Edit this post", edit_listing_path %>
+
+<%=	link_to "Delete this post", listing_path(@listing), method: :delete %>	

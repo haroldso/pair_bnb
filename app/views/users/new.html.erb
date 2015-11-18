@@ -1,0 +1,55 @@
+<h1>Create an account here!</h1>
+
+<%= form_for @user do |t| %>
+	<div>
+		<%= t.label :"Username: " %>
+		<%= t.text_field :username %>
+	</div>
+
+		<div>
+		<%= t.label :"Email: " %>
+		<%= t.email_field :email %>
+	</div>
+
+		<div>
+		<%= t.label :"Password: " %>
+		<%= t.password_field :password %>
+	</div>
+
+		<div>
+		<%= t.label :"Password confirmation: " %>
+		<%= t.password_field :password_confirmation %>
+	</div>
+
+		<div>
+		<%= t.label :"Birthday: " %>
+		<%= t.text_field :birthday %>
+	</div>
+
+		<div>
+		<%= t.label :"Contact: " %>
+		<%= t.text_field :contact %>
+	</div>
+
+		<div>
+		<%= t.label :"Address: " %>
+		<%= t.text_field :address %>
+	</div>
+
+		<div>
+		<%= t.label :"Gender: " %>
+		<%= t.text_field :gender %>
+	</div>
+
+		<div>
+		<%= t.label :"Tell us some about you: " %>
+		<%= t.text_area :about_you %>
+	</div>
+
+	<br>
+
+	<div>
+		<%= t.submit "Create Account" %>
+	</div>
+
+<% end %>

@@ -1,0 +1,57 @@
+<h1>Create a new listing here!</h1>
+
+<%= form_for @listing do |t| %>
+	<div>
+		<%= t.label :"Room Type: " %>
+		<%= t.text_field :room_type %>
+	</div>
+
+		<div>
+		<%= t.label :"Home Type: " %>
+		<%= t.text_field :home_type %>
+	</div>
+
+		<div>
+		<%= t.label :"Accomodates: " %>
+		<%= t.text_field :accomodates %>
+	</div>
+
+		<div>
+		<%= t.label :"City: " %>
+		<%= t.text_field :city %>
+	</div>
+
+		<div>
+		<%= t.label :"Bedroom: " %>
+		<%= t.text_field :bedroom %>
+	</div>
+
+		<div>
+		<%= t.label :"Bathroom: " %>
+		<%= t.text_field :bathroom %>
+	</div>
+
+		<div>
+		<%= t.label :"Bed Count: " %>
+		<%= t.text_field :bedcount %>
+	</div>
+
+		<div>
+		<%= t.label :"Listing Name: " %>
+		<%= t.text_field :listing_name %>
+	</div>
+
+		<div>
+		<%= t.label :"Summary: " %>
+		<%= t.text_area :summary %>
+	</div>
+
+	<br>
+
+	<div>
+		<%= t.submit "Edit listing!" %>
+	</div>
+
+
+
+<% end %>
