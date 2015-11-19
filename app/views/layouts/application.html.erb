@@ -11,12 +11,21 @@
 		<span>
 <%= link_to "Home", root_path %>
 		</span>
+    <% if user_logged_in? %>
+    <span>
+      <%= link_to "logout", logout_path, method: :delete %>
+    </span>
+    <span>
+      <%= "Welcome #{current_user.username}" %>
+    </span>
+    <% else %>
 		<span>
 <%= link_to "Signup", new_user_path %>
 		</span>
 		<span>
-<%= link_to "Login", root_path %>
+<%= link_to "Login", login_path %>
 		</span>
+    <% end %>
 	</div>	
 
 	  <div>

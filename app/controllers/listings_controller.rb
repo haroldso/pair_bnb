@@ -1,6 +1,7 @@
 class ListingsController < ApplicationController
-  before_action :set_listing, only: [:show, :edit, :update, :destroy]
-
+before_action :set_listing, only: [:show, :edit, :update, :destroy]
+before_action :authenticate_user!, except: [:index]
+before_action :check_correct_user, only: [:edit, :update, :destroy]
 
 def index
 @listing = Listing.all
@@ -11,7 +12,7 @@ def new
 end
 
 def create
-@listing = Listing.new(listing_params)
+@listing = current_user.listings.new(listing_params)
 if @listing.save
 	redirect_to listings_path
 	flash[:notice] = "Listing successfully created!"
@@ -54,6 +55,10 @@ private
     end
 
     def check_correct_user
+    	unless @listing.user == current_user
+    		flash[:warning] = "Unauthorized"
+    		redirect_to listing_path
+    	end
 
     end
 

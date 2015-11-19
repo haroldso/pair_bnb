@@ -1,0 +1,19 @@
+<h1>Please Login</h1>
+
+<%= form_for :session, url:login_path do |t| %>
+
+<div>
+<%= t.label :"Email: " %>
+<%= t.email_field :email %>
+</div>	
+
+<div>
+<%= t.label :"Password: " %>
+<%= t.password_field :password %>
+</div>	
+
+<div>
+<%= t.submit "Login!" %>
+</div>
+
+<% end %>
