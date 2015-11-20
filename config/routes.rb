@@ -1,12 +1,23 @@
 Rails.application.routes.draw do
 
   root "listings#index"
-  resources :listings
+  resources :listings, shallow: true do
+    resources :comments
+    resources :reservations
+  end
   resources :users, only: [:new, :create] 
-
   get '/login', to: "sessions#new", as: "login"
   post '/login', to: "sessions#create"
   delete "logout", to: "sessions#destroy", as: "logout"
+  
+    get 'auth/:provider/callback', to: 'sessions#create'
+    # get 'auth/failure', to: redirect('/')
+    get 'signout', to: 'sessions#destroy', as: 'signout'
+
+
+   # match '/signout' => 'sessions#destroy', :as => :signout
+  # match '/signin' => 'sessions#new', :as => :signin
+  # get "/listings/:listing_id/comments/new", to: "commments#new", as: "new_comment"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

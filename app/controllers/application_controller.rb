@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user!
   	if user_logged_in?
-  		redirect_to root_path
   	else
   		redirect_to login_path
   		flash[:warning] = "please login"

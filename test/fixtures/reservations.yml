@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  checkin_date: 2015-11-19
+  checkout_date: 2015-11-19
+  user_id: MyString
+  owner_it: MyString
+  daycount: 1
+  person: MyString
+  price: MyString
+
+two:
+  checkin_date: 2015-11-19
+  checkout_date: 2015-11-19
+  user_id: MyString
+  owner_it: MyString
+  daycount: 1
+  person: MyString
+  price: MyString
