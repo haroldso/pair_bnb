@@ -1,32 +1,36 @@
-<h2>Listing : <%= @listing.listing_name %></h2>
+<h1>Listing : <%= @listing.listing_name %></h2>
 
-<h1>About it: <%= @listing.summary %></h1>
+<h2>About it: <%= @listing.summary %></h2>
 
-<h1>Home type: <%= @listing.home_type %></h1>
+<h2>Home type: <%= @listing.home_type %></h2>
 
-<h1>Room type: <%= @listing.room_type %></h1>
+<h2>Room type: <%= @listing.room_type %></h2>
 
-<h1>City: <%= @listing.city %></h1>
+<h2>City: <%= @listing.city %></h2>
 
-<h1>Bathroom: <%= @listing.bathroom %></h1>
+<h2>Bathroom: <%= @listing.bathroom %></h2>
 
-<h1>Bedcount: <%= @listing.bedcount %></h1>
+<h2>Bedcount: <%= @listing.bedcount %></h2>
 
-<h1>Bedroom: <%= @listing.bedroom %></h1>
+<h2>Bedroom: <%= @listing.bedroom %></h2>
 
-<h1>Accomodates: <%= @listing.accomodates %></h1>
+<h2>Accomodates: <%= @listing.accomodates %></h2>
 
-<h1>Created: <%= @listing.created_at %></h1>
+<h2>Created: <%= @listing.created_at %></h2>
 
-<h1>Updated: <%= @listing.updated_at %></h1>
+<h2>Updated: <%= @listing.updated_at %></h2>
 
-<%= link_to "Edit this post", edit_listing_path %>
+<div class="btn btn-warning">
+<%=	link_to "Delete this post", listing_path(@listing), method: :delete %></div>
 
-<%=	link_to "Delete this post", listing_path(@listing), method: :delete %>	
+<div class="btn btn-warning">
+<%=	link_to "Delete this post", listing_path(@listing), method: :delete %></div>
 
+<div class="btn btn-warning">
 <%= link_to "Back", root_path %>
-<br>
+</div>
+
+<div class="btn btn-warning">
 <%= link_to "Book this place", new_listing_reservation_path(@listing) %>
-
-
+</div>
 

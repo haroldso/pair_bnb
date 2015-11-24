@@ -15,8 +15,11 @@ class User < ActiveRecord::Base
   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
     user.provider = auth.provider 
     user.uid      = auth.uid
-    user.name     = auth.info.name
-    user.save
+    user.username     = auth.info.name
+    user.email   =  auth.info.email
+    user.password = "12345678"
+    user.birthday = auth.info.user_birthday
+    user.save!
   end
   end
 

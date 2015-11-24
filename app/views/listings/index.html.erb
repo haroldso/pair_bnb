@@ -1,12 +1,14 @@
 <h1>Welcome to PairBnb</h1>
 
 <% @listing.each_with_index do | t, index| %>
+<div>
 <%= link_to t do %>
 <%= "#{index+1}. #{t.listing_name}" %>
-<br>
+</div>
 <% end %>
 
 <% end %>
 <br>
+<div class="btn btn-warning">
 <%= link_to "Post a new listings!", new_listing_path %>
-
+</div>

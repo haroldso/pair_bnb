@@ -2,16 +2,16 @@
 
 <%= form_for :session, url:login_path do |t| %>
 
-<div>
-<%= t.label :"Email: " %>
+<div class="test">
+<label class="col-sm-2">Email:</label>
 <%= t.email_field :email %>
 </div>	
 
-<div>
-<%= t.label :"Password: " %>
+<div class="test">
+<label class="col-sm-2">Password:</label>
 <%= t.password_field :password %>
 </div>	
-
+<br>
 <div>
 <%= t.submit "Login!" %>
 </div>

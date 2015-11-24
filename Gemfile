@@ -26,9 +26,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
+gem 'bootstrap-sass', '~> 3.3.5'
 # Use Unicorn as the app server
 # gem 'unicorn'
-gem 'omniauth-facebook', '~> 1.4.1'
+gem 'omniauth-facebook'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

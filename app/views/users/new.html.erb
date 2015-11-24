@@ -1,48 +1,48 @@
 <h1>Create an account here!</h1>
 
 <%= form_for @user do |t| %>
-	<div>
-		<%= t.label :"Username: " %>
+	<div class="test">
+		<label class="col-sm-2">Username:</label>
 		<%= t.text_field :username %>
 	</div>
 
-		<div>
-		<%= t.label :"Email: " %>
+		<div class="test">
+		<label class="col-sm-2">Email:</label>
 		<%= t.email_field :email %>
 	</div>
 
-		<div>
-		<%= t.label :"Password: " %>
+		<div class="test">
+		<label class="col-sm-2">Password:</label>
 		<%= t.password_field :password %>
 	</div>
 
-		<div>
-		<%= t.label :"Password confirmation: " %>
+		<div class="test">
+		<label class="col-sm-2">Confirmation password:</label>
 		<%= t.password_field :password_confirmation %>
 	</div>
 
-		<div>
-		<%= t.label :"Birthday: " %>
+		<div class="test">
+		<label class="col-sm-2">Birthday:</label>
 		<%= t.text_field :birthday %>
 	</div>
 
-		<div>
-		<%= t.label :"Contact: " %>
+		<div class="test">
+		<label class="col-sm-2">Contact:</label>
 		<%= t.text_field :contact %>
 	</div>
 
-		<div>
-		<%= t.label :"Address: " %>
+		<div class="test">
+		<label class="col-sm-2">Address:</label>
 		<%= t.text_field :address %>
 	</div>
 
-		<div>
-		<%= t.label :"Gender: " %>
+		<div class="test">
+		<label class="col-sm-2">Gender:</label>
 		<%= t.text_field :gender %>
 	</div>
 
-		<div>
-		<%= t.label :"Tell us some about you: " %>
+		<div class="test">
+		<label class="col-sm-2">About you:</label>
 		<%= t.text_area :about_you %>
 	</div>
 

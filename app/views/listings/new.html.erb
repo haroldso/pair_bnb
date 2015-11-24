@@ -1,51 +1,53 @@
+<div class="class-title">
 <h1>Create a new listing here!</h1>
-
-<%= form_for @listing do |t| %>
-	<div>
-		<%= t.label :"Room Type: " %>
+</div>
+<form class="form-horizontal" role="form">
+	<%= form_for @listing do |t| %>
+	<div class="test">
+		<label class="col-sm-2" for="email">Room Type:</label>
 		<%= t.text_field :room_type %>
 	</div>
 
-		<div>
-		<%= t.label :"Home Type: " %>
+	<div class="test">
+		<label class="col-sm-2" for="email">Home Type:</label>
 		<%= t.text_field :home_type %>
 	</div>
 
-		<div>
-		<%= t.label :"Accomodates: " %>
+	<div class="test">
+		<label class="col-sm-2" for="email">Accomodates:</label>
 		<%= t.text_field :accomodates %>
 	</div>
 
-		<div>
-		<%= t.label :"City: " %>
+	<div class="test">
+		<label class="col-sm-2" for="email">City:</label>
 		<%= t.text_field :city %>
 	</div>
 
-		<div>
-		<%= t.label :"Bedroom: " %>
+	<div class="test">
+		<label class="col-sm-2" for="email">Bedroom:</label>
 		<%= t.text_field :bedroom %>
 	</div>
 
-		<div>
-		<%= t.label :"Bathroom: " %>
+	<div class="test">
+		<label class="col-sm-2" for="email">Bathroom:</label>
 		<%= t.text_field :bathroom %>
 	</div>
 
-		<div>
-		<%= t.label :"Bed Count: " %>
+	<div class="test">
+		<label class="col-sm-2" for="email">Bedcount:</label>
 		<%= t.text_field :bedcount %>
 	</div>
 
-		<div>
-		<%= t.label :"Listing Name: " %>
+	<div class="test">
+		<label class="col-sm-2" for="email">Listing Name:</label>
 		<%= t.text_field :listing_name %>
 	</div>
 
-		<div>
-		<%= t.label :"Summary: " %>
+	<div class="test">
+		<label class="col-sm-2" for="email">Summary:</label>
 		<%= t.text_area :summary %>
 	</div>
-
+</form>
 	<br>
 
 	<div>
