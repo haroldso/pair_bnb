@@ -4,10 +4,10 @@ class CreateReservations < ActiveRecord::Migration
       t.date :checkin_date
       t.date :checkout_date
       t.string :user_id
-      t.string :owner_id
+      t.string :listing_id
       t.integer :daycount
       t.string :person
-      t.string :price
+      t.integer :totalprice
 
       t.timestamps null: false
     end

@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151120071558) do
+ActiveRecord::Schema.define(version: 20151119060342) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
     t.string   "body"
@@ -25,6 +28,7 @@ ActiveRecord::Schema.define(version: 20151120071558) do
     t.string   "room_type"
     t.string   "home_type"
     t.integer  "accomodates"
+    t.integer  "price"
     t.string   "city"
     t.integer  "bedroom"
     t.integer  "bathroom"
@@ -32,6 +36,7 @@ ActiveRecord::Schema.define(version: 20151120071558) do
     t.string   "summary"
     t.integer  "bedcount"
     t.string   "user_id"
+    t.json     "images"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
@@ -40,10 +45,10 @@ ActiveRecord::Schema.define(version: 20151120071558) do
     t.date     "checkin_date"
     t.date     "checkout_date"
     t.string   "user_id"
-    t.string   "owner_id"
+    t.string   "listing_id"
     t.integer  "daycount"
     t.string   "person"
-    t.string   "price"
+    t.integer  "totalprice"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -56,16 +61,15 @@ ActiveRecord::Schema.define(version: 20151120071558) do
     t.string   "contact"
     t.string   "address"
     t.string   "about_you"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
     t.string   "password_digest"
+    t.string   "avatar"
     t.string   "provider"
     t.string   "uid"
-    t.datetime "oauth_expires_at"
-    t.string   "name"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
-  add_index "users", ["provider"], name: "index_users_on_provider"
-  add_index "users", ["uid"], name: "index_users_on_uid"
+  add_index "users", ["provider"], name: "index_users_on_provider", using: :btree
+  add_index "users", ["uid"], name: "index_users_on_uid", using: :btree
 
 end

@@ -4,6 +4,7 @@ class CreateListings < ActiveRecord::Migration
       t.string :room_type
       t.string :home_type
       t.integer :accomodates
+      t.integer :price
       t.string :city
       t.integer :bedroom
       t.integer :bathroom
@@ -11,6 +12,7 @@ class CreateListings < ActiveRecord::Migration
       t.string :summary
       t.integer :bedcount
       t.string :user_id
+      t.json :images
 
       t.timestamps null: false
     end

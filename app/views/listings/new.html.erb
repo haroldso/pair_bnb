@@ -1,53 +1,61 @@
 <div class="class-title">
 <h1>Create a new listing here!</h1>
 </div>
-<form class="form-horizontal" role="form">
-	<%= form_for @listing do |t| %>
+	<%= form_for @listing, html: {multipart: true} do |t| %>
 	<div class="test">
-		<label class="col-sm-2" for="email">Room Type:</label>
+		<label class="col-sm-2">Room Type:</label>
 		<%= t.text_field :room_type %>
 	</div>
 
 	<div class="test">
-		<label class="col-sm-2" for="email">Home Type:</label>
+		<label class="col-sm-2">Home Type:</label>
 		<%= t.text_field :home_type %>
 	</div>
 
 	<div class="test">
-		<label class="col-sm-2" for="email">Accomodates:</label>
+		<label class="col-sm-2">Accomodates:</label>
 		<%= t.text_field :accomodates %>
 	</div>
 
 	<div class="test">
-		<label class="col-sm-2" for="email">City:</label>
+		<label class="col-sm-2">City:</label>
 		<%= t.text_field :city %>
 	</div>
 
 	<div class="test">
-		<label class="col-sm-2" for="email">Bedroom:</label>
+		<label class="col-sm-2">Bedroom:</label>
 		<%= t.text_field :bedroom %>
 	</div>
 
 	<div class="test">
-		<label class="col-sm-2" for="email">Bathroom:</label>
+		<label class="col-sm-2">Bathroom:</label>
 		<%= t.text_field :bathroom %>
 	</div>
 
 	<div class="test">
-		<label class="col-sm-2" for="email">Bedcount:</label>
+		<label class="col-sm-2">Bedcount:</label>
 		<%= t.text_field :bedcount %>
 	</div>
 
+		<div class="test">
+		<label class="col-sm-2">Price:</label>
+		<%= t.text_field :price %>
+	</div>
+
 	<div class="test">
-		<label class="col-sm-2" for="email">Listing Name:</label>
+		<label class="col-sm-2">Listing Name:</label>
 		<%= t.text_field :listing_name %>
 	</div>
 
 	<div class="test">
-		<label class="col-sm-2" for="email">Summary:</label>
+		<label class="col-sm-2">Summary:</label>
 		<%= t.text_area :summary %>
 	</div>
-</form>
+
+	<div class="test">
+		<label class="col-sm-2">Photo:</label>
+		<%= t.file_field :images , multiple: true%>
+	</div>
 	<br>
 
 	<div>

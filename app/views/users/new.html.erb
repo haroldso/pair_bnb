@@ -1,6 +1,6 @@
 <h1>Create an account here!</h1>
 
-<%= form_for @user do |t| %>
+<%= form_for @user, html: {multipart: true} do |t| %>
 	<div class="test">
 		<label class="col-sm-2">Username:</label>
 		<%= t.text_field :username %>
@@ -45,6 +45,12 @@
 		<label class="col-sm-2">About you:</label>
 		<%= t.text_area :about_you %>
 	</div>
+
+		<div class="test">
+		<label class="col-sm-2">Profile Pic:</label>
+		<%= t.file_field :avatar%>
+	</div>
+
 
 	<br>
 

@@ -1,5 +1,7 @@
 <h1>Listing : <%= @listing.listing_name %></h2>
 
+<h2>Price: <%= @listing.price %></h2>
+
 <h2>About it: <%= @listing.summary %></h2>
 
 <h2>Home type: <%= @listing.home_type %></h2>
@@ -20,11 +22,17 @@
 
 <h2>Updated: <%= @listing.updated_at %></h2>
 
+<p>
+<label><%= @listing.listing_name %></label>
+		<% @listing.images.each do |image| %>
+    	<%= image_tag image.url.to_s if image.url.present? %>
+    <% end %>
+</p>
 <div class="btn btn-warning">
 <%=	link_to "Delete this post", listing_path(@listing), method: :delete %></div>
 
 <div class="btn btn-warning">
-<%=	link_to "Delete this post", listing_path(@listing), method: :delete %></div>
+<%=	link_to "Edit this post", edit_listing_path %></div>
 
 <div class="btn btn-warning">
 <%= link_to "Back", root_path %>

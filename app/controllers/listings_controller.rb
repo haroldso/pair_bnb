@@ -12,14 +12,14 @@ def new
 end
 
 def create
-@listing = current_user.listings.new(listing_params)
-if @listing.save
-	redirect_to listings_path
-	flash[:notice] = "Listing successfully created!"
-else
-	render :new
-	flash[:warning] = "Listing not created!"
-end
+  @listing = current_user.listings.new(listing_params)
+  if @listing.save
+  	redirect_to listings_path
+  	flash[:notice] = "Listing successfully created!"
+  else
+  	render :new
+  	flash[:warning] = "Listing not created!"
+  end
 end
 
 def show
@@ -46,8 +46,7 @@ end
 
 private
     def listing_params
-      params.require(:listing).permit(:home_type, :room_type, :accomodates,
-        :city, :bedroom, :bathroom, :bedcount, :listing_name, :summary)
+      params.require(:listing).permit(:home_type, :room_type, :accomodates, :city, :bedroom, :bathroom, :bedcount, :listing_name, :summary, :price, images: [])
     end
 
     def set_listing
