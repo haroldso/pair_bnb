@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
 
   root "listings#index"
-  resources :listings, shallow: true do
+
+  get '/listings/new', to: "listings#new"
+  post '/listings/new', to: "listings#create"
+  resources :listings, except: [:new, :create], shallow: true do
     resources :comments
-    resources :reservations
+    resources :reservations, only: [:new, :create]
   end
+  
   resources :users, only: [:new, :create] 
   get '/login', to: "sessions#new", as: "login"
   post '/login', to: "sessions#create"
@@ -14,7 +18,7 @@ Rails.application.routes.draw do
     get 'auth/:provider/callback', to: 'sessions#create'
     # get 'auth/failure', to: redirect('/')
     get 'signout', to: 'sessions#destroy', as: 'signout'
-
+    
 
    # match '/signout' => 'sessions#destroy', :as => :signout
   # match '/signin' => 'sessions#new', :as => :signin

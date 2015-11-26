@@ -32,6 +32,9 @@ gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'pg'
+gem "figaro"
+gem 'fog-aws'
+gem 'fog'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -46,3 +49,4 @@ group :development do
   gem 'spring'
 end
 
+gem 'validates_overlap'

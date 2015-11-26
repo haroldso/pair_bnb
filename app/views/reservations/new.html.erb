@@ -1,1 +1,31 @@
 <h1> <%= @listing.listing_name %></h1>
+
+
+		<% @listing.images.each do |image| %>
+    	<%= image_tag image.url.to_s if image.url.present? %>
+    <% end %>
+
+ <p>Price per night:  RM<%= @listing.price %></p>
+
+ <%= form_for [@listing, @reservation] do |t| %>
+		<div class="test">
+		<label class="col-sm-2">Check-in date:</label>
+		<%= t.date_field :checkin_date %>
+	</div>
+
+		<div class="test">
+		<label class="col-sm-2">Check-out date:</label>
+		<%= t.date_field :checkout_date %>
+	</div>
+
+		<div class="test">
+		<label class="col-sm-2">Person:</label>
+		<%= t.text_field :person %>
+	</div>
+
+<br>
+<div>
+		<%= t.submit "Book this date" %>
+</div>
+
+	<% end %>

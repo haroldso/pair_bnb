@@ -1,7 +1,7 @@
 <div class="class-title">
 <h1>Create a new listing here!</h1>
 </div>
-	<%= form_for @listing, html: {multipart: true} do |t| %>
+	<%= form_for :listing, html: {multipart: true} do |t| %>
 	<div class="test">
 		<label class="col-sm-2">Room Type:</label>
 		<%= t.text_field :room_type %>
