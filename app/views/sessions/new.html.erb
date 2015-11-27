@@ -1,19 +1,20 @@
-<h1>Please Login</h1>
+	<h1>Please Login</h1>
 
-<%= form_for :session, url:login_path do |t| %>
+	<%= form_for :session, url:login_path do |t| %>
 
-<div class="test">
-<label class="col-sm-2">Email:</label>
-<%= t.email_field :email %>
-</div>	
+	<div class="test">
+	<label class="col-sm-2">Email:</label>
+	<%= t.email_field :email %>
+	</div>	
 
-<div class="test">
-<label class="col-sm-2">Password:</label>
-<%= t.password_field :password %>
-</div>	
-<br>
-<div>
-<%= t.submit "Login!" %>
-</div>
+	<div class="test">
+	<label class="col-sm-2">Password:</label>
+	<%= t.password_field :password %>
+	</div>	
+	<br>
 
-<% end %>
+	<div>
+	<%= t.submit "Login!" %>
+	</div>
+
+	<% end %>

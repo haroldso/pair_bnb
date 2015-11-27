@@ -1,5 +1,12 @@
+	<% @reservation.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+
 <h1> <%= @listing.listing_name %></h1>
 
+		<% @reservation.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
 
 		<% @listing.images.each do |image| %>
     	<%= image_tag image.url.to_s if image.url.present? %>

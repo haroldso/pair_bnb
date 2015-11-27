@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post '/listings/new', to: "listings#create"
   resources :listings, except: [:new, :create], shallow: true do
     resources :comments
-    resources :reservations, only: [:new, :create]
+    resources :reservations, only: [:new, :create, :index]
   end
   
   resources :users, only: [:new, :create] 
@@ -76,5 +76,12 @@ Rails.application.routes.draw do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
+
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
   #   end
 end
+
+# require 'sidekiq/web'
+#   mount Sidekiq::Web => '/sidekiq'
+# end

@@ -50,3 +50,5 @@ group :development do
 end
 
 gem 'validates_overlap'
+gem 'sidekiq'
+gem 'sinatra'
